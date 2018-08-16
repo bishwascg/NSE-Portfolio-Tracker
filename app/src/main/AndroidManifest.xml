@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bishwascgupta.mystockalert">
+
+    <!-- To Connect to the Internet -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- For SyncAdapter Framework -->
+    <!--
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SYNC_STATS"/>
+-->
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+        <activity
+            android:name=".ActivityMain"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".ActivityAddPortfolio"
+            android:label="@string/title_activity_add_portfolio"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ActivityEditPortfolio"
+            android:label="@string/title_activity_edit_portfolio"/>
+        <activity
+            android:name=".ActivityAddAlert"
+            android:label="@string/title_activity_add_alert"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ActivityEditAlert"
+            android:label="@string/title_activity_edit_alert"/>
+
+
+
+        <!-- For Job Service -->
+        <service android:name=".UpdateService"
+            android:label="Update Service"
+            android:permission="android.permission.BIND_JOB_SERVICE"/> >
+
+
+
+    </application>
+
+</manifest>
